@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Профиль</title></head>
+<body>
+    <h1>Профиль: {{ user.username }}</h1>
+    <img src="/static/avatars/{{ user.avatar }}" alt="Аватар" width="150">
+
+    <form action="/upload/avatar" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Сменить аватар</button>
+    </form>
+
+    <h2>Добавить фото:</h2>
+    <form action="/upload/photo" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <button type="submit">Загрузить</button>
+    </form>
+
+    <h2>Мои фото:</h2>
+    <div>
+        {% for photo in photos %}
+            <img src="/static/photos/{{ photo.filename }}" width="200">
+        {% endfor %}
+    </div>
+</body>
+</html>
