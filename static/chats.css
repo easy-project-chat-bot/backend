@@ -1,0 +1,59 @@
+body {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+.namebar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    text-align: center;
+    height: 70px;
+    border-bottom: 5px solid #33333314;
+    box-shadow: 0px 2px 4px 0px #00000040;
+}
+.text1 {
+    margin-left: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #333333;
+}
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+.home {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.home :hover {
+    opacity: 50%;
+}
+.fav {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.fav :hover {
+    opacity: 50%;
+}
+.chats {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.chats :hover {
+    opacity: 50%;
+}
+.profile {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.profile :hover {
+    opacity: 50%;
+}

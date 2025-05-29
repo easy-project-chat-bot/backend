@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+
+    <link rel="stylesheet" href="/static/profile.css">
+</head>
+
+
+
+<body>
+    <div class="block1_1">
+        <h1 class="name">Профиль: {{ user.username }}</h1>
+    </div>
+
+    <img src="/static/avatars/{{ user.avatar }}" alt="" class="ava" width="150">
+
+    <form action="/upload/avatar" method="post" enctype="multipart/form-data">
+        <label for="avatar-upload" class="custom-file-upload">Выбрать аватар</label>
+        <input type="file" id="avatar-upload" name="file" />
+        <button type="submit">Сменить аватар</button>
+    </form>
+
+    <h2>Добавить фото:</h2>
+    <form action="/upload/photo" method="post" enctype="multipart/form-data">
+        <label for="photo-upload" class="custom-file-upload">Выбрать фото</label>
+        <input type="file" id="photo-upload" name="file" />
+        <button type="submit">Загрузить</button>
+    </form>
+
+    <h2>Мои фото:</h2>
+    <div>
+        {% for photo in photos %}
+            <img src="/static/photos/{{ photo.filename }}" width="200">
+        {% endfor %}
+    </div>
+
+
+
+    <footer class="footer">
+        <a href="main.html" class="home">
+            <img src="/static/img/Group 598 (1).png" alt="">
+        </a>
+        <a href="favourites.html" class="fav">
+            <img src="/static/img/Vector (1).png" alt="">
+        </a>
+        <a href="/chats" class="chats">
+            <img src="/static/img/Vector.png" alt="">
+        </a>
+        <a href="/profile" class="profile">
+            <img src="/static/img/Group 599 (1).png" alt="">
+        </a>
+    </footer>
+</body>
+</html>
