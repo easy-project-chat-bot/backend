@@ -1,0 +1,39 @@
+body {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+.namebar {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 5px solid #33333314;
+    height: 50px;
+}
+.name {
+    color: rgba(51, 51, 51, 1);
+    text-decoration: none;
+    width: 68.85347747802734;
+    height: 14.631109237670898;
+    font-size: 30px;
+    font-weight: 550;
+    margin-left: 20px;
+    -webkit-tap-highlight-color: transparent;
+}
+.notif {
+    width: 24px;
+    height: 24px;
+    border-radius: 100px;
+    border: none;
+    background-color: rgb(212, 212, 212);
+    color: none;
+    background: none;
+    margin-right: 10px;
+    cursor: pointer;
+    margin-right: 20px;
+    -webkit-tap-highlight-color: transparent;
+}
+.notif1:hover {
+    opacity: 50%;
+}
