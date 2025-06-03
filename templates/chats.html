@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чаты</title>
+  <link rel="stylesheet" href="/static/chats.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #fff;
+      color: #000;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .chat-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .chat-item {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+
+    .chat-item:hover {
+      background: #fafafa;
+    }
+
+    .chat-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: #ccc;
+      margin-right: 15px;
+      object-fit: cover;
+    }
+
+    .chat-name {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    
+
+    .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+.home {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.home :hover {
+    opacity: 50%;
+}
+.fav {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.fav :hover {
+    opacity: 50%;
+}
+.chats {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.chats :hover {
+    opacity: 50%;
+}
+.profile {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.profile :hover {
+    opacity: 50%;
+}
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Вы вступили в чаты:</h1>
+    <ul class="chat-list">
+      {% for group in chat_names %}
+        <li>
+          <a href="/{{ group }}chat" class="chat-item">
+            <img src="/static/img/{{ group }}.png" alt="chat" class="chat-avatar"/>
+            <span class="chat-name">{{ group | capitalize }} чат</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+  <footer class="footer">
+        <a href="main.html" class="home">
+            <img src="/static/img/Group 598 (1).png" alt="">
+        </a>
+        <a href="favourites.html" class="fav">
+            <img src="/static/img/Vector (1).png" alt="">
+        </a>
+        <a href="/chats" class="chats">
+            <img src="/static/img/Vector (3).png" alt="">
+        </a>
+        <a href="/profile" class="profile">
+            <img src="/static/img/Group 599.png" alt="">
+        </a>
+    </footer>
+
+</body>
+</html>

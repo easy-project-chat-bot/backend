@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registration</title>
+    <link rel="stylesheet" href="/static/registration.css">
+</head>
+<body>
+    <header class="header">
+        <div class="namebar">
+            <p class="appname">takee</p>
+        </div>
+    </header>
+
+<form action="/register" method="post">
+    <div class="information">
+  <div class="field-group">
+    <p class="text">Напишите ваше имя</p>
+    <input name="name" type="text" placeholder="Имя пользователя" class="pole">
+  </div>
+
+
+  <div class="field-group">
+    <p class="text">Напишите вашу фамилию</p>
+    <input name="surname" type="text" placeholder="Фамилия пользователя" class="pole">
+  </div>
+
+  <div class="field-group">
+    <p class="text">Придумайте логин</p>
+    <input name="username" type="text" placeholder="Логин пользователя" class="pole">
+  </div>
+
+  <div class="field-group">
+    <p class="text">Напишите ваш email</p>
+    <input name="email" type="text" placeholder="Email пользователя" class="pole">
+  </div>
+
+  <div class="field-group">
+    <p class="text">Придумайте пароль</p>
+    <input name="password" type="text" placeholder="Пароль пользователя" class="pole">
+  </div>
+
+  <div class="field-group">
+    <p class="text">Повторите пароль</p>
+    <input name="password_repeat" type="text" placeholder="Повторите пароль" class="pole">
+  </div>
+</div>
+
+
+<div class="knopka">
+    <button type="submit" href="main.html" class="zareg">Зарегистрироваться</button>
+</div>
+</form>
+
+</body>
+</html>

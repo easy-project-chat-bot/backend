@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vhod</title>
+    <link rel="stylesheet" href="/static/vhod.css">
+</head>
+<body>
+    <header class="header">
+        <div class="namebar">
+            <p class="appname">takee</p>
+            <p class="privetstvie">Добро пожаловать</p>
+        </div>
+    </header>
+
+    <form action="/login" method="post">
+    <div class="reg">
+        <input type="text" name="username" placeholder="Введите ваш логин" class="login">
+        <input type="password" name="password" placeholder="Введите ваш пароль" class="password">
+    </div>
+    <div class="knopochki">
+        <button type="submit" class="voiti">Войти</button>
+        <a href="/register" class="zareg">Зарегистрироваться</a>
+    </div>
+</form>
+
+
+</body>
+</html>

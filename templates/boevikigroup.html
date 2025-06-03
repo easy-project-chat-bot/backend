@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Боевики Chat</title>
+  <link rel="stylesheet" href="/static/cyclinggroup.css" />
+</head>
+<body>
+  <div class="block1">
+    <a href="javascript:history.back()" class="backbutton">
+      <img src="/static/img/iconBack.png" alt="" class="backb" />
+    </a>
+
+    <div class="txt">
+      <p class="topicname">Боевики</p>
+      <p class="topicname2" id="member-count">Загрузка...</p>
+    </div>
+
+
+
+    <footer class="footer">
+      <textarea id="message-input" placeholder="Написать сообщение" class="vvod"></textarea>
+      <button class="send-btn">
+        <img src="/static/img/iconBack (2).png" alt="" class="arrow" />
+      </button>
+    </footer>
+
+    <img src="/static/img/boeviki.png" alt="" class="image" />
+  </div>
+
+  <div class="chat"></div>
+
+  <script>
+    const username = "{{ user.username }}";
+    const group = "boeviki"; // замените на нужное имя группы
+    const chatBox = document.querySelector('.chat');
+
+    const ws = new WebSocket(`ws://localhost:8000/ws/chat/${group}`);
+
+    fetch(`/chat/messages/${group}`).then(r => r.json()).then(messages => {
+      for (const msg of messages) {
+        const p = document.createElement('p');
+        p.textContent = `${msg.username}: ${msg.content}`;
+        chatBox.appendChild(p);
+      }
+    });
+
+    fetch(`/chat/members/${group}`).then(r => r.json()).then(data => {
+      document.getElementById("member-count").textContent = `${data.count} участников`;
+    });
+
+    ws.onmessage = event => {
+      const data = JSON.parse(event.data);
+      const p = document.createElement('p');
+      p.textContent = `${data.username}: ${data.content}`;
+      chatBox.appendChild(p);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    };
+
+    document.querySelector('.send-btn').addEventListener('click', () => {
+      const input = document.getElementById('message-input');
+      const message = input.value;
+      if (message.trim()) {
+        ws.send(JSON.stringify({ username: username, content: message }));
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>

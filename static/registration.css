@@ -1,0 +1,70 @@
+body {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+.header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 130px;
+    align-items: center;
+}
+.appname {
+    color: #333333;
+    width: 138px;
+    height: 24px;
+    font-size: 50px;
+    font-weight: 550;
+    transform: scale(1, 0.7);
+    margin: 0px;
+}
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 40px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 310px;
+}
+
+.text {
+  font-weight: 500;
+  font-size: 15px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.pole {
+  width: 290px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #B0AEAE;
+  border-radius: 16px;
+  color: #000;
+}
+
+.knopka {
+    display: flex;
+    justify-content: center;
+}
+.zareg {
+    width: 310px;
+    height: 40px;
+    border-radius: 32px;
+    background: #ffffff;
+    color: #33333399;
+    border: 1px solid #F2968F;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
