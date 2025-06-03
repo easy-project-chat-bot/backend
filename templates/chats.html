@@ -58,22 +58,47 @@
       font-size: 16px;
     }
 
-    nav {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-around;
-      background: #fff;
-      border-top: 1px solid #ddd;
-      padding: 10px 0;
-    }
+    
 
-    nav img {
-      width: 24px;
-      height: 24px;
-    }
+    .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+.home {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.home :hover {
+    opacity: 50%;
+}
+.fav {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.fav :hover {
+    opacity: 50%;
+}
+.chats {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.chats :hover {
+    opacity: 50%;
+}
+.profile {
+    margin: auto;
+    -webkit-tap-highlight-color: transparent;
+}
+.profile :hover {
+    opacity: 50%;
+}
   </style>
 </head>
 <body>
@@ -92,12 +117,20 @@
     </ul>
   </div>
 
-  <nav>
-    <a href="main.html"><img src="/static/img/Group 598 (1).png" alt="home"/></a>
-    <a href="favourites.html"><img src="/static/img/Vector (2).png" alt="fav"/></a>
-    <a href="/chats"><img src="/static/img/Vector.png" alt="chats"/></a>
-    <a href="/profile"><img src="/static/img/Group 599.png" alt="profile"/></a>
-  </nav>
+  <footer class="footer">
+        <a href="main.html" class="home">
+            <img src="/static/img/Group 598 (1).png" alt="">
+        </a>
+        <a href="favourites.html" class="fav">
+            <img src="/static/img/Vector (1).png" alt="">
+        </a>
+        <a href="/chats" class="chats">
+            <img src="/static/img/Vector (3).png" alt="">
+        </a>
+        <a href="/profile" class="profile">
+            <img src="/static/img/Group 599.png" alt="">
+        </a>
+    </footer>
 
 </body>
 </html>

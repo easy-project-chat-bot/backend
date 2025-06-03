@@ -1,0 +1,3 @@
+<a href="notif.html" class="notif">
+        <img src="/static/img/iconNotification.png" alt="" class="notif1" >
+</a>
