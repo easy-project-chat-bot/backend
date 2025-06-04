@@ -14,6 +14,12 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 Base.metadata.create_all(bind=engine)
 
+from fastapi.responses import FileResponse
+
+@app.get("/manifest.json")
+async def manifest():
+    return FileResponse("templates/manifest.json", media_type="application/manifest+json")
+
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     user = get_current_user(request)
