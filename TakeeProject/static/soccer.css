@@ -1,0 +1,118 @@
+body {
+    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+}
+
+.block1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+}
+.bigimage {
+    width: 339px;
+    height: 361px;
+    border-radius: 32px;
+    object-fit: cover;
+}
+.backbutton {
+    position: absolute;
+    width: 32;
+    height: 32;
+    top: 43px;
+    left: 43px;
+    -webkit-tap-highlight-color: transparent;
+}
+.backbutton :hover {
+    opacity: 50%;
+}
+.block2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.txt1 {
+    margin-left: 20px;
+    font-weight: 700;
+    font-size: 24px;
+    color: #333333;
+}
+.txt2 {
+    margin-right: 20px;
+    font-weight: 500;
+    font-size: 15px;
+    color: #8D8D8D;
+}
+.tags {
+    display: flex;
+    align-items: center;
+}
+.tag1 {
+    font-weight: 400;
+    font-size: 12px;
+    color: #41A5A0;
+    border: none;
+    background-color: #9BFFFA;
+    border-radius: 32px;
+    padding-top: 9px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+.tag2 {
+    font-weight: 400;
+    font-size: 12px;
+    color: #7BB975;
+    border: none;
+    background-color: #C1FFBB;
+    border-radius: 32px;
+    padding-top: 9px;
+    padding-right: 12px;
+    padding-bottom: 10px;
+    padding-left: 12px;
+    margin-top: 0px;
+    margin-left: 20px;
+}
+.block3 {
+    height: 420px;
+    width: 355px;
+}
+.txt3 {
+    font-weight: 700;
+    font-size: 20px;
+    color: #333333;
+    margin-left: 20px;
+    margin-bottom: 0px;
+}
+.txt4 {
+    font-weight: 500;
+    font-size: 15px;
+    color: #8D8D8D;
+    margin-left: 20px;
+    margin-left: 20px;
+}
+.block4 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+}
+.vstupit {
+    width: 339px;
+    height: 50px;
+    border-radius: 32px;
+    gap: 10px;
+    padding-top: 15px;
+    padding-right: 10px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    background-color: #F2968F;
+    color: white;
+    border: none;
+}

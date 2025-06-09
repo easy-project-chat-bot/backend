@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бег chat</title>
+    <link rel="stylesheet" href="/static/cyclinggroup.css">
+</head>
+<body>
+    <div class="block1">
+        <a href="javascript:history.back()" class="backbutton">
+            <img src="/static/img/iconBack.png" alt="" class="backb">
+        </a>
+
+        <div class="txt">
+            <p class="topicname">Бег</p>
+            <p class="topicname2" id="member-count">0 участников</p>
+        </div>
+
+
+
+        <footer class="footer">
+            <textarea id="message-input" placeholder="Написать сообщение" class="vvod"></textarea>
+            <!-- Кнопка отправки -->
+            <button type="button" class="send-btn">
+                <img src="/static/img/iconBack (2).png" alt="" class="arrow">
+            </button>
+        </footer>
+
+
+
+        <img src="/static/img/running.png" alt="" class="image">
+    </div>
+
+     <div class="chat" id="chat-box"></div>
+
+<script>
+    const username = "{{ user.username }}";
+    const group = "running";
+    const chatBox = document.getElementById('chat-box');
+    const input = document.getElementById('message-input');
+
+    const ws = new WebSocket(`ws://${location.host}/ws/chat/${group}`);
+
+    function appendMessage(username, content) {
+        const p = document.createElement('p');
+        p.textContent = `${username}: ${content}`;
+        chatBox.appendChild(p);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    // Загрузка истории сообщений
+    async function loadHistory() {
+        const res = await fetch(`/chat/messages/${group}`);
+        const messages = await res.json();
+        chatBox.innerHTML = '';
+        messages.forEach(msg => appendMessage(msg.username, msg.content));
+    }
+
+    ws.onmessage = event => {
+        const data = JSON.parse(event.data);
+        appendMessage(data.username, data.content);
+    };
+
+    document.querySelector('.send-btn').addEventListener('click', () => {
+        const message = input.value.trim();
+        if (message) {
+            ws.send(JSON.stringify({username: username, content: message}));
+            input.value = '';
+        }
+    });
+
+    input.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" && !event.shiftKey) {
+            event.preventDefault();
+            document.querySelector('.send-btn').click();
+        }
+    });
+
+    async function updateMemberCount() {
+        const res = await fetch(`/chat/members/${group}`);
+        const data = await res.json();
+        document.getElementById("member-count").textContent = `${data.count} участников`;
+    }
+
+    updateMemberCount();
+    setInterval(updateMemberCount, 5000);  // обновлять каждые 5 сек
+
+    // Загружаем историю при входе
+    loadHistory();
+</script>
+</body>
+</html>
